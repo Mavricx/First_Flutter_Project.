@@ -49,33 +49,13 @@ var arrname=["piku","lora","Herra","Ashok kumar","Susama singh","Basanti Nayak"]
           backgroundColor: Colors.green,
           title: Text('Priyanshu\'1st app'),
         ),
-         body:Center(
-           child: InkWell(
-             child: Container(
-               child: Center(child: Text("PIKU",style: TextStyle(fontSize: 15),)),
-               height: 55,
-               width: 55,
-             decoration: BoxDecoration(
-               color: Colors.red,
-                   borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
-               border: Border.all(
-                 width: 10,
-                 color: Colors.pink
-               ),
-               boxShadow: [
-                 BoxShadow(
-                   blurRadius: 5,
+         body:Container(
+           color: Colors.blueGrey,
+           margin: EdgeInsets.all(23),
+           padding: EdgeInsets.all(24),
+           child: Text("PIKUL IS COOL",style: TextStyle(fontSize: 25,color: Colors.white),),
 
-                 )
-               ]
-             ),
-
-             ),
-
-           onTap: (){
-               print("Hari");
-           },),
-         ),
+         )
         // This trailing comma makes auto-formatting nicer for build methods.
         );
   }
