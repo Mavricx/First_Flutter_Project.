@@ -41,22 +41,37 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
-var arrname=["piku","lora","Herra","Ashok kumar","Susama singh","Basanti Nayak"];
+var arrname=["piku","lora","Herra","Ashok kumar","Susama singh","Basanti Nayak","Golu","Molu","Tolu"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.green,
-          title: Text('Priyanshu\'1st app'),
+          title: Text('Dashboard'),
         ),
-         body:Container(
-           color: Colors.blueGrey,
-           margin: EdgeInsets.all(23),
-           padding: EdgeInsets.all(24),
-           child: Text("PIKUL IS COOL",style: TextStyle(fontSize: 25,color: Colors.white),),
+         body:ListView.separated(itemBuilder: (context,index){
+           return ListTile(
+             leading: Text("${index+1}"),
+             title: Text(arrname[index]),
+             subtitle: Text("Number"),
+             trailing:InkWell(
+                 onTap:(){
+                   print("Hello!!") ;
+                 },child: Icon(Icons.add)
+             ),
+           );
 
-         )
+         },
+           itemCount: arrname.length,
+         separatorBuilder: (context,index){
+            return Divider(
+           height: 20,
+           thickness: 3.4,
+               );
+    },
+
         // This trailing comma makes auto-formatting nicer for build methods.
-        );
+         ) );
+
   }
 }
