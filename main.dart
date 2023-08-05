@@ -41,24 +41,36 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
-var arrname=["piku","lora","Herra","Ashok kumar","Susama singh","Basanti Nayak","Golu","Molu","Tolu"];
+var arrname=["piku","lora","Heera","Ashok kumar","Susama singh","Basanti Nayak","Golu","Molu","Tolu"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.green,
-          title: Text('Dashboard'),
+          title: Text('Priyanshu\'s First App'),
         ),
-         body:Center(
+         body:ListView.separated(itemBuilder: (context,index){
+           return ListTile(
+             leading:CircleAvatar(
+           backgroundImage: AssetImage("assets/images/heera.jpg"),
+           radius: 28,),
+             title: Text(arrname[index]),
+             subtitle: Text("Number"),
+             trailing:InkWell(
+                 onTap:(){
+                   print("Hello!!") ;
+                 },child: Icon(Icons.add)
+             ),
+           );
 
-            child:CircleAvatar(
-              child: Text("Heera",style: TextStyle(
-                fontSize: 25,
-                color: Colors.red
-              ),),
-               backgroundImage: AssetImage("assets/images/heera.jpg"),
-             radius: 69,
-            ),
+         },
+           itemCount: arrname.length,
+           separatorBuilder: (context,index){
+             return Divider(
+               height: 20,
+               thickness: 3.4,
+             );
+           },
          )
     );
 
