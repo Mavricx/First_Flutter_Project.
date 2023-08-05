@@ -49,29 +49,18 @@ var arrname=["piku","lora","Herra","Ashok kumar","Susama singh","Basanti Nayak",
           backgroundColor: Colors.green,
           title: Text('Dashboard'),
         ),
-         body:ListView.separated(itemBuilder: (context,index){
-           return ListTile(
-             leading: Text("${index+1}"),
-             title: Text(arrname[index]),
-             subtitle: Text("Number"),
-             trailing:InkWell(
-                 onTap:(){
-                   print("Hello!!") ;
-                 },child: Icon(Icons.add)
-             ),
-           );
+         body:Center(
 
-         },
-           itemCount: arrname.length,
-         separatorBuilder: (context,index){
-            return Divider(
-           height: 20,
-           thickness: 3.4,
-               );
-    },
-
-        // This trailing comma makes auto-formatting nicer for build methods.
-         ) );
+            child:CircleAvatar(
+              child: Text("Heera",style: TextStyle(
+                fontSize: 25,
+                color: Colors.red
+              ),),
+               backgroundImage: AssetImage("assets/images/heera.jpg"),
+             radius: 69,
+            ),
+         )
+    );
 
   }
 }
