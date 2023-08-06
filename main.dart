@@ -13,35 +13,20 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primarySwatch: Colors.lightBlue,
+        textTheme: TextTheme(
+         displayLarge :TextStyle(fontSize: 21,fontFamily: 'fontStylish')
+        ),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home:  MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class MyHomePage extends StatelessWidget {
 
-
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-var arrname=["Piku","Lora","Heera Bhalu","Ashok kumar","Susama Singh","Basanti Nayak","Golu","Molu","Tolu"];
+  var arrname=["Piku","Lora","Heera Bhalu","Ashok kumar","Susama Singh","Basanti Nayak","Golu","Molu","Tolu"];
   var relation=["Myself","Sister","Sister","Father","Mother","GrandMother","Stranger","Stranger","Stranger"];
   @override
   Widget build(BuildContext context) {
@@ -55,7 +40,7 @@ var arrname=["Piku","Lora","Heera Bhalu","Ashok kumar","Susama Singh","Basanti N
              leading:CircleAvatar(
            backgroundImage: AssetImage("assets/images/heera.jpg"),
            radius: 28,),
-             title: Text(arrname[index],style: TextStyle(fontFamily: 'fontStylish'),),
+             title: Text(arrname[index],style: Theme.of(context).textTheme.displayLarge),
              subtitle: Text(relation[index],style: TextStyle(fontFamily: 'fontStylish'),),
              trailing:InkWell(
                  onTap:(){
@@ -63,8 +48,7 @@ var arrname=["Piku","Lora","Heera Bhalu","Ashok kumar","Susama Singh","Basanti N
                  },child: Icon(Icons.add)
              ),
            );
-
-         },
+           },
            itemCount: arrname.length,
            separatorBuilder: (context,index){
              return Divider(
