@@ -41,7 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
-var arrname=["piku","lora","Heera","Ashok kumar","Susama singh","Basanti Nayak","Golu","Molu","Tolu"];
+var arrname=["Piku","Lora","Heera Bhalu","Ashok kumar","Susama Singh","Basanti Nayak","Golu","Molu","Tolu"];
+  var relation=["Myself","Sister","Sister","Father","Mother","GrandMother","Stranger","Stranger","Stranger"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,8 +55,8 @@ var arrname=["piku","lora","Heera","Ashok kumar","Susama singh","Basanti Nayak",
              leading:CircleAvatar(
            backgroundImage: AssetImage("assets/images/heera.jpg"),
            radius: 28,),
-             title: Text(arrname[index]),
-             subtitle: Text("Number"),
+             title: Text(arrname[index],style: TextStyle(fontFamily: 'fontStylish'),),
+             subtitle: Text(relation[index],style: TextStyle(fontFamily: 'fontStylish'),),
              trailing:InkWell(
                  onTap:(){
                    print("Hello!!") ;
