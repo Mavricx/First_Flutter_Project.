@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:intl/intl.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -48,7 +48,7 @@ class MyHomePage extends StatelessWidget {
   //   "Stranger",
   //   "Stranger"
   // ];
-
+  var time = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,6 +59,17 @@ class MyHomePage extends StatelessWidget {
     body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Container(
+            child: Column(
+              children: [
+                Text("Current Time: ${DateFormat("jms").format(time)}",style: TextStyle(fontSize: 20,fontFamily: "bungee",fontWeight: FontWeight.bold),),
+                ElevatedButton(onPressed: (){
+                  //setState((){});  will work in statefull widget.
+                },
+                    child: Text("Refresh Time"))
+              ],
+            ),
+          ),
           Text("LOG-IN PAGE",style: TextStyle(fontSize: 25,fontFamily: "bungee",fontWeight: FontWeight.bold),),
           Container(
             height: 20,
@@ -135,4 +146,6 @@ class MyHomePage extends StatelessWidget {
 
     );
   }
+
+
 }
