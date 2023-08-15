@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter/material.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -7,64 +9,61 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
-        textTheme: TextTheme(
-            displayLarge: TextStyle(fontSize: 21, fontFamily: 'fontStylish')),
+
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+
+      _counter++;
+    });
+  }
   var emailText=TextEditingController();
   var password=TextEditingController();
-  // var arrname = [
-  //   "Piku",
-  //   "Lora",
-  //   "Heera Bhalu",
-  //   "Ashok kumar",
-  //   "Susama Singh",
-  //   "Basanti Nayak",
-  //   "Golu",
-  //   "Molu",
-  //   "Tolu"
-  // ];
-  // var relation = [
-  //   "Myself",
-  //   "Sister",
-  //   "Sister",
-  //   "Father",
-  //   "Mother",
-  //   "GrandMother",
-  //   "Stranger",
-  //   "Stranger",
-  //   "Stranger"
-  // ];
   var time = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-        backgroundColor: Colors.green,
-        title: Text('User Login'),
-    ),
-    body: Column(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body:Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             child: Column(
               children: [
-                Text("Current Time: ${DateFormat("jms").format(time)}",style: TextStyle(fontSize: 20,fontFamily: "bungee",fontWeight: FontWeight.bold),),
+                Text("Current Time: ${DateFormat("Hms").format(time)}",style: TextStyle(fontSize: 20,fontFamily: "bungee",fontWeight: FontWeight.bold),),
                 ElevatedButton(onPressed: (){
-                  //setState((){});  will work in statefull widget.
+                  setState((){
+
+                  });
                 },
                     child: Text("Refresh Time"))
               ],
@@ -124,7 +123,7 @@ class MyHomePage extends StatelessWidget {
                   borderSide: BorderSide(
                     color: Colors.black
                   )
-                      
+
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(11),
