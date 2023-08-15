@@ -83,20 +83,14 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               height: 20,
             ),
-             Text(
+            Text(
               "Choose your Date of Birth",
               style: TextStyle(
                   fontSize: 17,
                   fontFamily: "bungee",
                   fontWeight: FontWeight.bold),
             ),
-            Text(
-              "${dob.year}-${dob.month}-${dob.day}",
-              style: TextStyle(
-                  fontSize: 17,
-                  fontFamily: "bungee",
-                  fontWeight: FontWeight.bold),
-            ),
+
             ElevatedButton(
               child: Text("Choose DOB"),
               onPressed: () async {
@@ -106,13 +100,28 @@ class _MyHomePageState extends State<MyHomePage> {
                     firstDate: DateTime(1960),
                     lastDate: DateTime(3000));
                 if (datePicked != null) {
-                   setState(() {
+                  setState(() {
                     dob = datePicked;
                     print("${dob.year}-${dob.month}-${dob.day}");
                   });
                 }
               },
-            )
+            ),
+            Text("Choose time of your Birth",style: TextStyle(fontSize: 17,
+                fontFamily: "bungee",
+                fontWeight: FontWeight.bold),),
+            ElevatedButton(
+                onPressed: () async {
+                  TimeOfDay ? pickedTime =await  showTimePicker(
+                    context: context,
+                    initialTime: TimeOfDay.now(),
+                    initialEntryMode: TimePickerEntryMode.input,
+                  );
+                  if(pickedTime!=null){
+                    print("Time picked :${pickedTime.hour}:${pickedTime.minute}");
+                  }
+                },
+                child: Text("Select Time",))
           ],
         ),
       ),
