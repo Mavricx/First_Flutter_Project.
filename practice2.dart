@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               height: 20,
             ),
-            Text(
+             Text(
               "Choose your Date of Birth",
               style: TextStyle(
                   fontSize: 17,
@@ -104,10 +104,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     context: context,
                     initialDate: DateTime.now(),
                     firstDate: DateTime(1960),
-                    lastDate: DateTime(2023));
+                    lastDate: DateTime(3000));
                 if (datePicked != null) {
-                  setState(() {
+                   setState(() {
                     dob = datePicked;
+                    print("${dob.year}-${dob.month}-${dob.day}");
                   });
                 }
               },
