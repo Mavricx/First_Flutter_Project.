@@ -70,8 +70,8 @@ class _MyHomePageState extends State<MyHomePage> {
             child: TextField(
               controller: emailText,
               decoration: InputDecoration(
-                  hintText: "Enter Email adress",
-                  prefixIcon: Icon(Icons.email),
+                  hintText: "Enter Mobile number",
+                  prefixIcon: Icon(Icons.phone_android),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(color: Colors.black)),
