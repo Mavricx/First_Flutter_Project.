@@ -1,6 +1,4 @@
-mport 'package:flutter/material.dart
-'
-;
+import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +34,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  callback(){
+    print("pikul");
+  }
   int _counter = 0;
 
   void _incrementCounter() {
@@ -65,47 +67,11 @@ class _MyHomePageState extends State<MyHomePage> {
               .inversePrimary,
           title: Text(widget.title),
         ),
-        body: Column(
-          children: [GridView.count(
-            crossAxisCount: 3, //keeps no of containter fix in each row
-            crossAxisSpacing: 11,
-            mainAxisSpacing: 11,
-            children: [
-              Container(color: Colors.green,),
-              Container(color: Colors.blue,),
-              Container(color: Colors.pink,),
-              Container(color: Colors.grey,),
-              Container(color: Colors.yellow,),
-              Container(color: Colors.black,),
-            ],),
-            Container(
-              height: 200,
-            ),
-            Container(
-              child: GridView.extent(maxCrossAxisExtent: 75,
-                //keeps size if the container fix in the row
-                crossAxisSpacing: 11,
-                mainAxisSpacing: 11,
-                children: [
-                  Container(color: Colors.green,),
-                  Container(color: Colors.blue,),
-                  Container(color: Colors.pink,),
-                  Container(color: Colors.grey,),
-                  Container(color: Colors.yellow,),
-                  Container(color: Colors.black,),
-                ],),
-            ),
-            GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3, crossAxisSpacing: 11),
-              itemBuilder: (context, index) {
-                return Container(color: colors[index],);
-              },
-              itemCount: colors.length,)
-
-          ],)
+        body:ElevatedButton(child: Text("Press me"),
+          onPressed: (){
+          print("Clicked!!!!!");
+    },)
     );
   }
-
 
 }

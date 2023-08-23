@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
             displayLarge: TextStyle(fontSize: 21, fontFamily: 'fontStylish')),
         useMaterial3: true,
       ),
@@ -47,19 +47,21 @@ class MyHomePage extends StatelessWidget {
     "Stranger"
   ];
 
+  MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.green,
-          title: Text('Priyanshu\'s First App'),
+          title: const Text('Priyanshu\'s First App'),
         ),
         body: ListView.builder(
           itemBuilder: (context, index) {
             return Card(
               elevation: 12,
               child: ListTile(
-                leading: CircleAvatar(
+                leading: const CircleAvatar(
                   backgroundImage: AssetImage("assets/images/heera.jpg"),
                   radius: 28,
                 ),
@@ -67,13 +69,13 @@ class MyHomePage extends StatelessWidget {
                     style: Theme.of(context).textTheme.displayLarge),
                 subtitle: Text(
                   relation[index],
-                  style: TextStyle(fontFamily: 'fontStylish'),
+                  style: const TextStyle(fontFamily: 'fontStylish'),
                 ),
                 trailing: InkWell(
                     onTap: () {
-                      print("Hello!!");
+                      // print("Hello!!");
                     },
-                    child: Icon(Icons.add)),
+                    child: const Icon(Icons.add)),
               ),
             );
           },

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:intl/intl.dart';
-import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
@@ -39,12 +38,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-
       _counter++;
     });
   }
-  var emailText=TextEditingController();
-  var password=TextEditingController();
+
+  var emailText = TextEditingController();
+  var password = TextEditingController();
   var time = DateTime.now();
   @override
   Widget build(BuildContext context) {
@@ -53,23 +52,16 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body:Column(
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            child: Column(
-              children: [
-                Text("Current Time: ${DateFormat("Hms").format(time)}",style: TextStyle(fontSize: 20,fontFamily: "bungee",fontWeight: FontWeight.bold),),
-                ElevatedButton(onPressed: (){
-                  setState((){
-
-                  });
-                },
-                    child: Text("Refresh Time"))
-              ],
-            ),
+          const Text(
+            "LOG-IN PAGE",
+            style: TextStyle(
+                fontSize: 25,
+                fontFamily: "bungee",
+                fontWeight: FontWeight.bold),
           ),
-          Text("LOG-IN PAGE",style: TextStyle(fontSize: 25,fontFamily: "bungee",fontWeight: FontWeight.bold),),
           Container(
             height: 20,
           ),
@@ -78,27 +70,14 @@ class _MyHomePageState extends State<MyHomePage> {
             child: TextField(
               controller: emailText,
               decoration: InputDecoration(
-                hintText: "Enter Email adress",
-                  prefixIcon: Icon(
-                      Icons.email
-                  ),
-
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(
-                    color: Colors.black
-                  )
-
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(
-                    color: Colors.blue
-
-                  )
-                )
-              ),
-
+                  hintText: "Enter Email adress",
+                  prefixIcon: Icon(Icons.email),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: Colors.black)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: Colors.blue))),
             ),
           ),
           Container(
@@ -106,45 +85,34 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Container(
             width: 300,
-            child:  TextField(
+            child: TextField(
               controller: password,
               obscureText: true,
               obscuringCharacter: "*",
               decoration: InputDecoration(
-                hintText:"Enter Your Password",
-                suffixIcon: Icon(
-                  Icons.remove_red_eye
-                ),
-                prefixIcon: Icon(
-                  Icons.key
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(11),
-                  borderSide: BorderSide(
-                    color: Colors.black
-                  )
-
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(11),
-                  borderSide: BorderSide(
-                    color: Colors.blue
-                  )
-                )
-              ),
+                  hintText: "Enter Your Password",
+                  suffixIcon: Icon(Icons.remove_red_eye),
+                  prefixIcon: Icon(Icons.key),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: BorderSide(color: Colors.black)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: BorderSide(color: Colors.blue))),
             ),
           ),
-          ElevatedButton(onPressed: (){
-            String uMail=emailText.text.toString();
-            String uPass=password.text;
-            print("Email:$uMail, Password:$uPass");
-          }, child: Text("Log In",style: TextStyle(fontSize: 20),)
-          )
+          ElevatedButton(
+              onPressed: () {
+                String uMail = emailText.text.toString();
+                String uPass = password.text;
+                print("Email:$uMail, Password:$uPass");
+              },
+              child: Text(
+                "Log In",
+                style: TextStyle(fontSize: 20),
+              ))
         ],
       ),
-
     );
   }
-
-
 }
