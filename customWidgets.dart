@@ -186,4 +186,3 @@ class BlankArea extends StatelessWidget{
   }
 
 }
-
