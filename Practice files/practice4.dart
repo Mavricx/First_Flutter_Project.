@@ -33,7 +33,8 @@ class MyHomePage extends StatelessWidget {
           backgroundColor: Colors.greenAccent,
           title: const Text('Priyanshu\'s First Apps'),
         ),
-        body: Stack(
+        body:
+        Stack(
           children: [
             Positioned(
               bottom: 50,
@@ -51,6 +52,7 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
           ],
-        ));
+        )
+        );
   }
 }
